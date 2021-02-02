@@ -6,9 +6,9 @@ use \Hcode\Model\Category;
 use \Hcode\Model\Cart;
 
 $app->get('/', function() {
-
-	$products = Product::listAll();
     
+	$products = Product::listAll();
+
 	$page = new Page();
 
 	$page->setTpl("index", [
@@ -66,10 +66,11 @@ $app->get("/cart", function(){
 	$cart = Cart::getFromSession();
 
 	$page = new Page();
-
+	
 	$page->setTpl("cart", [
 		'cart'=>$cart->getValues(),
-		'products'=>$cart->getProducts()
+		'products'=>$cart->getProducts(),
+		'error'=>$cart->getCartError()
 	]);
 
 });
@@ -107,6 +108,7 @@ $app->get("/cart/:idproduct/minus", function($idproduct){
 
 	header("Location: /cart");
 	exit;
+
 });
 
 $app->get("/cart/:idproduct/remove", function($idproduct){
@@ -121,6 +123,20 @@ $app->get("/cart/:idproduct/remove", function($idproduct){
 
 	header("Location: /cart");
 	exit;
+
+});
+
+$app->post("/cart/freight", function(){
+
+	$nrzipcode = str_replace("-", "", $_POST['zipcode']);
+
+	$cart = Cart::getFromSession();
+
+	$cart->setFreight($nrzipcode);
+
+	header("Location: /cart");
+	exit;
+
 });
 
  ?>
