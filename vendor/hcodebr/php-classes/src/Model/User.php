@@ -5,7 +5,6 @@ namespace Hcode\Model;
 use \Hcode\DB\Sql;
 use \Hcode\Model;
 use \Hcode\Mailer;
-use \Hcode\Model\User;
 
 class User extends Model {
 
@@ -244,7 +243,7 @@ class User extends Model {
 
 				if ($inadmin === true) {
 
-					$link = "http://www.hcodecommerce.com:8888/admin/forgot/reset?code=$code";
+					$link = "http://www.hcodecommerce.com.br:8888/admin/forgot/reset?code=$code";
 
 				} else {
 
