@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '976da69707d88cef82b3eb4ee230911118383c85',
         'name' => 'hugo-fneves/ecommerce',
         'dev' => true,
     ),
     'versions' => array(
         'hugo-fneves/ecommerce' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '976da69707d88cef82b3eb4ee230911118383c85',
             'dev_requirement' => false,
         ),
         'phpmailer/phpmailer' => array(
